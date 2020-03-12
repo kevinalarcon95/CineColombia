@@ -1,9 +1,16 @@
-
+/*
+    Creado por:
+        Kevin Alarcón
+        Nathalia Ruiz
+        Luis Romero
+        Juan Camilo Gonzalez
+ */
 package control;
 
 import java.util.Date;
 
 public class Pelicula {
+
     private String tituloPelicula;
     private Date fechaEstreno;
     private String Calificación;
@@ -107,6 +114,5 @@ public class Pelicula {
     public void setIdioma(String idioma) {
         this.idioma = idioma;
     }
-    
-    
+
 }

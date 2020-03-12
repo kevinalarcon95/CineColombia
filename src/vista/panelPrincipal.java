@@ -1,3 +1,10 @@
+/*
+    Creado por:
+        Kevin Alarcón
+        Nathalia Ruiz
+        Luis Romero
+        Juan Camilo Gonzalez
+ */
 package vista;
 
 import java.util.Date;
@@ -5,17 +12,14 @@ import java.text.SimpleDateFormat;
 import javax.swing.JFrame;
 import AppPackage.AnimationClass;
 import control.DAOGestionUsuario;
-import control.Usuario;
 import java.awt.BorderLayout;
 import java.awt.Desktop;
 import java.net.URI;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 public class panelPrincipal extends javax.swing.JFrame {
+
     public panelPrincipal(String cadena) throws SQLException {
         DAOGestionUsuario dao = new DAOGestionUsuario();
         String nombreC = dao.generarNombreCompleto(cadena);//Consulta
@@ -64,7 +68,7 @@ public class panelPrincipal extends javax.swing.JFrame {
         btnPreventa = new javax.swing.JLabel();
         lblMenu = new javax.swing.JLabel();
         lblNombrePerfil = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblIconousuario = new javax.swing.JLabel();
         btnTwitter = new javax.swing.JButton();
         btnFacebook = new javax.swing.JButton();
         btnContacto = new javax.swing.JButton();
@@ -72,8 +76,8 @@ public class panelPrincipal extends javax.swing.JFrame {
         contenedor = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         btnMinimizar = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblSalir = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -170,8 +174,8 @@ public class panelPrincipal extends javax.swing.JFrame {
         lblNombrePerfil.setText("Nombre Usuario");
         panelOpciones.add(lblNombrePerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_User_96px_2.png"))); // NOI18N
-        panelOpciones.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
+        lblIconousuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_User_96px_2.png"))); // NOI18N
+        panelOpciones.add(lblIconousuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
 
         btnTwitter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Twitter.JPG"))); // NOI18N
         btnTwitter.setBorder(null);
@@ -259,16 +263,16 @@ public class panelPrincipal extends javax.swing.JFrame {
         });
         panelContenedor.add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 20));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Multiply_32px.png"))); // NOI18N
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Multiply_32px.png"))); // NOI18N
+        lblSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
+                lblSalirMouseClicked(evt);
             }
         });
-        panelContenedor.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 30, 20));
+        panelContenedor.add(lblSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 30, 20));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logoCineCo.JPG"))); // NOI18N
-        panelContenedor.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logoCineCo.JPG"))); // NOI18N
+        panelContenedor.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
         getContentPane().add(panelContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 500, 550));
 
@@ -300,13 +304,13 @@ public class panelPrincipal extends javax.swing.JFrame {
         twitterr.jButtonXLeft(10, -40, 10, 5, btnTwitter);
     }//GEN-LAST:event_lblMenuMouseClicked
 
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+    private void lblSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalirMouseClicked
         int dialog = JOptionPane.YES_NO_OPTION;
         int result = JOptionPane.showConfirmDialog(null, " Desea salir?", "Salir", dialog);
         if (result == 0) {
             System.exit(0);
         }
-    }//GEN-LAST:event_jLabel9MouseClicked
+    }//GEN-LAST:event_lblSalirMouseClicked
 
     private void btnCarteleraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCarteleraMouseClicked
         panelCartelera panelCartelera = new panelCartelera();
@@ -425,13 +429,13 @@ public class panelPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel btnTarjetaCliente;
     private javax.swing.JButton btnTwitter;
     private javax.swing.JPanel contenedor;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblIconousuario;
+    private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblMenu;
     private javax.swing.JLabel lblNombrePerfil;
+    private javax.swing.JLabel lblSalir;
     private javax.swing.JPanel panelContenedor;
     private javax.swing.JPanel panelOpciones;
     // End of variables declaration//GEN-END:variables

@@ -1,8 +1,17 @@
+
+/*
+    Creado por:
+        Kevin Alarcón
+        Nathalia Ruiz
+        Luis Romero
+        Juan Camilo Gonzalez
+ */
 package control;
 
 import java.util.Date;
 
 public class Funcion {
+
     private Date fechaFuncion;
     private String sala;
     private String efecto;

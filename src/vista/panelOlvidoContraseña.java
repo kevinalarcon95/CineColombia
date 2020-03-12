@@ -19,14 +19,13 @@ public class panelOlvidoContraseña extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         this.setResizable(false);
         JPanel p = new JPanel();
-        p.setBorder(BorderFactory.createLineBorder(Color.black,10));
+        p.setBorder(BorderFactory.createLineBorder(Color.black, 10));
         TextPrompt textUsuario = new TextPrompt(" Ingrese su usuario", txtUsuario);
         TextPrompt textNuevaContraseña = new TextPrompt(" Ingrese su nueva contraseña", txtnuevacontraseña);
         TextPrompt textConfirmarContraseña = new TextPrompt(" Confirme su nueva contraseña", txtconfirmacontraseña);
     }
-    
-    
- @SuppressWarnings("unchecked")
+
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -146,38 +145,37 @@ public class panelOlvidoContraseña extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMinimizarActionPerformed
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-      
+
         DAOGestionUsuario dao = new DAOGestionUsuario();
         String nuevaContraseña = String.valueOf(txtnuevacontraseña.getPassword());
         String confirmar = String.valueOf(txtconfirmacontraseña.getPassword());
-        Usuario us = new Usuario(txtUsuario.getText(),nuevaContraseña);
+        Usuario us = new Usuario(txtUsuario.getText(), nuevaContraseña);
         int bandera = 0;
-        
-        
+
         try {
             bandera = dao.existeUsuario(us);
             if (bandera == 1) {
-                if(nuevaContraseña.equals(confirmar)){
+                if (nuevaContraseña.equals(confirmar)) {
                     dao.Actualizar(us);
                     dao.ActualizarRegistro(us);
                     txtUsuario.setText("");
                     txtnuevacontraseña.setText("");
                     txtconfirmacontraseña.setText("");
-                    javax.swing.JOptionPane.showMessageDialog(this,"Contraseña Actualizada \n","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                }else{
+                    javax.swing.JOptionPane.showMessageDialog(this, "Contraseña Actualizada \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                } else {
                     txtnuevacontraseña.setText("");
                     txtconfirmacontraseña.setText("");
-                    javax.swing.JOptionPane.showMessageDialog(this,"Las contraseñas no coinciden\n","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    javax.swing.JOptionPane.showMessageDialog(this, "Las contraseñas no coinciden\n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 }
             } else {
-                javax.swing.JOptionPane.showMessageDialog(this,"No exite un usuario registrado con ese nombre de usuario\n","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(this, "No exite un usuario registrado con ese nombre de usuario\n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (SQLException ex) {
             //javax.swing.JOptionPane.showMessageDialog(this, "Error en la base de datos \n", "AVISO!" + ex, javax.swing.JOptionPane.INFORMATION_MESSAGE);
             System.out.println(ex);
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Jpanel;
     private javax.swing.JButton btnConfirmar;

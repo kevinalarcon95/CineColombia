@@ -1,3 +1,11 @@
+
+/*
+    Creado por:
+        Kevin Alarcón
+        Nathalia Ruiz
+        Luis Romero
+        Juan Camilo Gonzalez
+ */
 package vista;
 
 public class panelTarjeta extends javax.swing.JPanel {

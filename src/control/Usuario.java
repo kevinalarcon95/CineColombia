@@ -1,6 +1,11 @@
+/*
+    Creado por:
+        Kevin Alarcón
+        Nathalia Ruiz
+        Luis Romero
+        Juan Camilo Gonzalez
+ */
 package control;
-
-import java.sql.Date;
 
 public class Usuario {
 
@@ -16,10 +21,11 @@ public class Usuario {
 
     public Usuario() {
     }
-    
-    public Usuario(String us_usuario){
+
+    public Usuario(String us_usuario) {
         this.us_usuario = us_usuario;
     }
+
     public Usuario(String us_usuario, String us_contraseña) {
         this.us_usuario = us_usuario;
         this.us_contraseña = us_contraseña;
@@ -29,7 +35,7 @@ public class Usuario {
         this.us_documento = us_documento;
         this.us_usuario = us_usuario;
     }
-   
+
     public Usuario(long us_documento, String ustipoDocumento, String us_usuario, String us_contraseña, String us_correo, String us_nombre, String us_apellido, String us_direccion, String us_numcelular) {
         this.us_documento = us_documento;
         this.ustipoDocumento = ustipoDocumento;
