@@ -376,7 +376,7 @@ public class panelCartelera extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnComparBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoletaActionPerformed
-
+        new panelInfoPeliculas().setVisible(true);
     }//GEN-LAST:event_btnComparBoletaActionPerformed
 
     private void btnComparBoleta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta1ActionPerformed

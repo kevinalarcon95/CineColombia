@@ -13,8 +13,8 @@ public class Pelicula {
 
     private String tituloPelicula;
     private Date fechaEstreno;
-    private String Calificación;
-    private String Sipnosis;
+    private String Clasificación;
+    private String Sinopsis;
     private String paisOrigen;
     private String duracion;
     private String reparto;
@@ -22,11 +22,11 @@ public class Pelicula {
     private String genero;
     private String idioma;
 
-    public Pelicula(String tituloPelicula, Date fechaEstreno, String Calificación, String Sipnosis, String paisOrigen, String duracion, String reparto, String director, String genero, String idioma) {
+    public Pelicula(String tituloPelicula, Date fechaEstreno, String Clasificación, String Sinopsis, String paisOrigen, String duracion, String reparto, String director, String genero, String idioma) {
         this.tituloPelicula = tituloPelicula;
         this.fechaEstreno = fechaEstreno;
-        this.Calificación = Calificación;
-        this.Sipnosis = Sipnosis;
+        this.Clasificación = Clasificación;
+        this.Sinopsis = Sinopsis;
         this.paisOrigen = paisOrigen;
         this.duracion = duracion;
         this.reparto = reparto;
@@ -51,20 +51,20 @@ public class Pelicula {
         this.fechaEstreno = fechaEstreno;
     }
 
-    public String getCalificación() {
-        return Calificación;
+    public String getClasificación() {
+        return Clasificación;
     }
 
-    public void setCalificación(String Calificación) {
-        this.Calificación = Calificación;
+    public void setClasificación(String Clasificación) {
+        this.Clasificación = Clasificación;
     }
 
-    public String getSipnosis() {
-        return Sipnosis;
+    public String getSinopsis() {
+        return Sinopsis;
     }
 
-    public void setSipnosis(String Sipnosis) {
-        this.Sipnosis = Sipnosis;
+    public void setSinopsis(String Sinopsis) {
+        this.Sinopsis = Sinopsis;
     }
 
     public String getPaisOrigen() {
@@ -114,5 +114,4 @@ public class Pelicula {
     public void setIdioma(String idioma) {
         this.idioma = idioma;
     }
-
 }

@@ -125,7 +125,7 @@ public class ConectaDb {
         }
         return resultado;
     }
-    
+ //metodo para generar una cadena
     public String generaCadena(String cadenaSql) throws SQLException{
         String resultado = "";
 
