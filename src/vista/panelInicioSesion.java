@@ -1,3 +1,10 @@
+/*
+    Creado por:
+        Kevin Alarcón
+        Nathalia Ruiz
+        Luis Romero
+        Juan Camilo Gonzalez
+*/
 package vista;
 
 import control.DAOGestionUsuario;
