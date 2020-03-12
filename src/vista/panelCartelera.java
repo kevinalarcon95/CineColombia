@@ -3,7 +3,7 @@ public class panelCartelera extends javax.swing.JPanel {
 
     public panelCartelera() {
         initComponents();
-        TextPrompt textBuscar = new TextPrompt("  Busque una película", txtBuscar);
+        //TextPrompt textBuscar = new TextPrompt("  Busque una película", txtBuscar);
         //jScrollPane2.setBorder(border);
     }
 
@@ -47,7 +47,7 @@ public class panelCartelera extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        txtBuscar = new javax.swing.JTextField();
+        cbxPelicula = new javax.swing.JComboBox<>();
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/El llamado salvaje.jpg"))); // NOI18N
 
@@ -241,41 +241,30 @@ public class panelCartelera extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 45, 480, 400));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(238, 112, 82));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Search_32px_2.png"))); // NOI18N
+        jLabel2.setText("BUSCAR PELÍCULAS EN CARTELERA:");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         jSeparator2.setForeground(new java.awt.Color(102, 102, 102));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 49, 170, 10));
 
-        txtBuscar.setForeground(new java.awt.Color(153, 153, 153));
-        txtBuscar.setBorder(null);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(154, 154, 154))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2)))
-        );
+        cbxPelicula.setBackground(new java.awt.Color(238, 112, 82));
+        cbxPelicula.setEditable(true);
+        cbxPelicula.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        cbxPelicula.setForeground(new java.awt.Color(255, 255, 255));
+        cbxPelicula.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "ANGEL DE MI VIDA", "EL HOMBRE INVISIBLE", "MUJERCITAS", "PARÁSITO", "EL LLAMADO SALVAJE", "1917", "LOS CABALLEROS", "LA HORA DE TU MUERTE", "SONIC LA PELICULA", "UNIDOS", " " }));
+        cbxPelicula.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        cbxPelicula.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cbxPelicula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxPeliculaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cbxPelicula, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 18, 213, 20));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, -1));
     }// </editor-fold>//GEN-END:initComponents
@@ -320,6 +309,10 @@ public class panelCartelera extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnComparBoleta9ActionPerformed
 
+    private void cbxPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPeliculaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxPeliculaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnComparBoleta;
@@ -332,6 +325,7 @@ public class panelCartelera extends javax.swing.JPanel {
     private javax.swing.JButton btnComparBoleta7;
     private javax.swing.JButton btnComparBoleta8;
     private javax.swing.JButton btnComparBoleta9;
+    private javax.swing.JComboBox<String> cbxPelicula;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -358,6 +352,5 @@ public class panelCartelera extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }
