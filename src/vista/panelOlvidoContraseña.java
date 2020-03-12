@@ -29,100 +29,44 @@ public class panelOlvidoContraseña extends javax.swing.JFrame {
  @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         Jpanel = new javax.swing.JPanel();
         txtUsuario = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         btnConfirmar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnMinimizar = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JSeparator();
         btnSalir = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JSeparator();
-        jLabel4 = new javax.swing.JLabel();
         txtnuevacontraseña = new javax.swing.JPasswordField();
         txtconfirmacontraseña = new javax.swing.JPasswordField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
 
         Jpanel.setBackground(new java.awt.Color(255, 255, 255));
         Jpanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Jpanel.setLayout(new java.awt.GridBagLayout());
+        Jpanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtUsuario.setBorder(null);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.ipadx = 239;
-        gridBagConstraints.ipady = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 120, 0, 0);
-        Jpanel.add(txtUsuario, gridBagConstraints);
+        Jpanel.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 200, 30));
 
         jSeparator1.setForeground(new java.awt.Color(102, 102, 102));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.ipadx = 239;
-        gridBagConstraints.ipady = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 120, 0, 0);
-        Jpanel.add(jSeparator1, gridBagConstraints);
+        Jpanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 240, 10));
 
         jSeparator3.setForeground(new java.awt.Color(102, 102, 102));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.ipadx = 239;
-        gridBagConstraints.ipady = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 120, 0, 0);
-        Jpanel.add(jSeparator3, gridBagConstraints);
+        Jpanel.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 240, 10));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("¿Olvidaste tu contraseña?");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 8;
-        gridBagConstraints.ipadx = 14;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(40, 130, 0, 0);
-        Jpanel.add(jLabel2, gridBagConstraints);
-
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel3.setText("Usuario:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(45, 120, 0, 0);
-        Jpanel.add(jLabel3, gridBagConstraints);
-
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel5.setText("Nueva Contraseña:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 120, 0, 0);
-        Jpanel.add(jLabel5, gridBagConstraints);
+        Jpanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 240, -1));
 
         btnConfirmar.setBackground(new java.awt.Color(153, 153, 153));
         btnConfirmar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
@@ -132,26 +76,12 @@ public class panelOlvidoContraseña extends javax.swing.JFrame {
                 btnConfirmarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 15;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(38, 20, 37, 0);
-        Jpanel.add(btnConfirmar, gridBagConstraints);
+        Jpanel.add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 100, -1));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Crea una nueva contraseña");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
-        Jpanel.add(jLabel1, gridBagConstraints);
+        Jpanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 150, -1));
 
         btnMinimizar.setBackground(new java.awt.Color(255, 255, 255));
         btnMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Expand_Arrow_32px.png"))); // NOI18N
@@ -162,23 +92,7 @@ public class panelOlvidoContraseña extends javax.swing.JFrame {
                 btnMinimizarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 9;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = -3;
-        gridBagConstraints.ipady = -13;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 60, 0, 0);
-        Jpanel.add(btnMinimizar, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 9;
-        gridBagConstraints.ipady = 19;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(7, 10, 0, 0);
-        Jpanel.add(jSeparator2, gridBagConstraints);
+        Jpanel.add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 30, 20));
 
         btnSalir.setBackground(new java.awt.Color(255, 255, 255));
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Multiply_32px.png"))); // NOI18N
@@ -188,63 +102,31 @@ public class panelOlvidoContraseña extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 10;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = -3;
-        gridBagConstraints.ipady = -13;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 10);
-        Jpanel.add(btnSalir, gridBagConstraints);
+        Jpanel.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 30, 20));
 
         jSeparator5.setForeground(new java.awt.Color(102, 102, 102));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 11;
-        gridBagConstraints.gridwidth = 8;
-        gridBagConstraints.ipadx = 249;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 120, 0, 0);
-        Jpanel.add(jSeparator5, gridBagConstraints);
-
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel4.setText("Confirmar Contraseña:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 19;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 120, 0, 0);
-        Jpanel.add(jLabel4, gridBagConstraints);
+        Jpanel.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 250, -1));
 
         txtnuevacontraseña.setBorder(null);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.ipadx = 239;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 120, 0, 0);
-        Jpanel.add(txtnuevacontraseña, gridBagConstraints);
+        Jpanel.add(txtnuevacontraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 200, 30));
 
         txtconfirmacontraseña.setBorder(null);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.ipadx = 239;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 120, 0, 0);
-        Jpanel.add(txtconfirmacontraseña, gridBagConstraints);
+        Jpanel.add(txtconfirmacontraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 200, 20));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Perfil.JPG"))); // NOI18N
+        Jpanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 30, 30));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Password.JPG"))); // NOI18N
+        Jpanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Check.JPG"))); // NOI18N
+        Jpanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Jpanel, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Jpanel, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,10 +186,9 @@ public class panelOlvidoContraseña extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTextField txtUsuario;
