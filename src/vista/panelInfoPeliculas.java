@@ -202,7 +202,7 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
                 btnComparBoletaActionPerformed(evt);
             }
         });
-        panelContenedorInfoPel.add(btnComparBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 490, -1, 20));
+        panelContenedorInfoPel.add(btnComparBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 470, -1, 20));
 
         areaSinopsis.setColumns(20);
         areaSinopsis.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N

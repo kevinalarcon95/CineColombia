@@ -278,7 +278,7 @@ public class panelProximosEstrenos extends javax.swing.JPanel {
                 btnComparBoleta7ActionPerformed(evt);
             }
         });
-        contenedorEstrenos.add(btnComparBoleta7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, 100, 20));
+        contenedorEstrenos.add(btnComparBoleta7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, 100, -1));
 
         lbl9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/mujer maravilla.jpeg"))); // NOI18N
         lbl9.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -350,53 +350,93 @@ public class panelProximosEstrenos extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnComparBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoletaActionPerformed
-         try {
+        try {
             String ruta = "src/image/artemis.jpeg";
-            new panelInfoPeliculas("EL HOMBRE INVISIBLE",ruta).setVisible(true);
+            new panelInfoPeliculas("EL HOMBRE INVISIBLE", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnComparBoletaActionPerformed
 
     private void btnComparBoleta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta1ActionPerformed
-         try {
-            String ruta = "src/image/gloodbooster.jpeg";
-            new panelInfoPeliculas("EL HOMBRE INVISIBLE",ruta).setVisible(true);
+        try {
+            String ruta = "src/image/bobEsponja.jpeg";
+            new panelInfoPeliculas("BOB ESPONJA AL RESCATE", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnComparBoleta1ActionPerformed
 
     private void btnComparBoleta2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta2ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String ruta = "src/image/bloods.jpeg";
+            new panelInfoPeliculas("BLOODSHOT", ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoleta2ActionPerformed
 
     private void btnComparBoleta3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta3ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String ruta = "src/image/En el barrio.jpeg";
+            new panelInfoPeliculas("EN EL BARRIO", ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoleta3ActionPerformed
 
     private void btnComparBoleta4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta4ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String ruta = "src/image/saul.jpeg";
+            new panelInfoPeliculas("SOUL", ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoleta4ActionPerformed
 
     private void btnComparBoleta5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta5ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String ruta = "src/image/minios.jpeg";
+            new panelInfoPeliculas("MINIONS 2: NACE UN VILLANO", ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoleta5ActionPerformed
 
     private void btnComparBoleta6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta6ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String ruta = "src/image/free guy.jpeg";
+            new panelInfoPeliculas("FREE GUY: TOMANDO EL CONTROL", ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoleta6ActionPerformed
 
     private void btnComparBoleta7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta7ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String ruta = "src/image/rapidos y furiosos 8.jpeg";
+            new panelInfoPeliculas("RÁPIDOS Y FURIOSOS 9", ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoleta7ActionPerformed
 
     private void btnComparBoleta8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta8ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String ruta = "src/image/mujer maravilla.jpeg";
+            new panelInfoPeliculas("MUJER MARAVILLA 1984", ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoleta8ActionPerformed
 
     private void btnComparBoleta9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta9ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String ruta = "src/image/mulan.jpeg";
+            new panelInfoPeliculas("MULÁN", ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoleta9ActionPerformed
 
     private void lbl1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl1MouseMoved
