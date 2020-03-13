@@ -474,7 +474,7 @@ public class panelCartelera extends javax.swing.JPanel {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnComparBoleta9ActionPerformed
-
+//Metodo para el buscar por pelicula
     private void cbxPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPeliculaActionPerformed
         int opcion = cbxPelicula.getSelectedIndex();
         switch (opcion) {
