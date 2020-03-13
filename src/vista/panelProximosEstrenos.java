@@ -7,6 +7,8 @@
  */
 package vista;
 
+import java.sql.SQLException;
+
 public class panelProximosEstrenos extends javax.swing.JPanel {
 
     public panelProximosEstrenos() {
@@ -348,11 +350,21 @@ public class panelProximosEstrenos extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnComparBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoletaActionPerformed
-
+         try {
+            String ruta = "src/image/artemis.jpeg";
+            new panelInfoPeliculas("EL HOMBRE INVISIBLE",ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoletaActionPerformed
 
     private void btnComparBoleta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta1ActionPerformed
-        // TODO add your handling code here:
+         try {
+            String ruta = "src/image/gloodbooster.jpeg";
+            new panelInfoPeliculas("EL HOMBRE INVISIBLE",ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoleta1ActionPerformed
 
     private void btnComparBoleta2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta2ActionPerformed

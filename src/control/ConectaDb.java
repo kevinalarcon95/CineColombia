@@ -18,16 +18,19 @@ import java.util.logging.Logger;
 
 public class ConectaDb {
 
+    //<editor-fold defaultstate="collapsed" desc="Declaracion de variables" >
     private String user, pass, urlConectar, driver;// definicion de variables para la coneccion
     public Connection conection; // variable de la clase conect para conectar la base de datos
-    private java.sql.Statement statement; // estatement controla las coneciones y las ejecuciones de las sql   
-    //---------------------metodo constructor para la clase conectar
+    private java.sql.Statement statement; // estatement controla las coneciones y las ejecuciones de las sql 
+//</editor-fold>
 
+    //<editor-fold defaultstate="collapsed" desc="Metodo constructor para la clase conectar" >
     public ConectaDb() {
 
     }
-    //---------------------fin del constructor
+//</editor-fold>
 
+    //<editor-fold defaultstate="collapsed" desc="Metodo que permite la conexion con la BD" >
     public void conectar() {
         user = "postgres";
         pass = "123456789";
@@ -48,8 +51,9 @@ public class ConectaDb {
         }
 
     }
+//</editor-fold>
 
-//-------------------metodo para cerrar la coneccion a la db
+    //<editor-fold defaultstate="collapsed" desc="Metodo para cerrar la coneccion a la db" >
     public void cerrarConexion() {
         try {
             conection.close();
@@ -57,8 +61,9 @@ public class ConectaDb {
             ex.printStackTrace();
         }
     }
+//</editor-fold>
 
-//metodo para generar las consultas
+    //<editor-fold defaultstate="collapsed" desc="Metodo para generar las consultas" >
     public ResultSet retornarconsultas(String cadConsulta) {
         ResultSet resultado = null;
 
@@ -72,9 +77,9 @@ public class ConectaDb {
 
         return resultado;
     }
+//</editor-fold>
 
-    //------------------------------
-    //----------------metodo para cerrar el resultado
+    //<editor-fold defaultstate="collapsed" desc="Metodo para cerrar el resultado" >
     public void cierraResultado(ResultSet resutado) {
         try {
 
@@ -83,8 +88,9 @@ public class ConectaDb {
             ex.printStackTrace();
         }
     }
-    // ---------------------fin del metodo
+//</editor-fold>
 
+    //<editor-fold defaultstate="collapsed" desc="Metodo para la transaccion de una consulta (Boolean)" >
     public boolean transaccion(String cadenaSql) {
         //boolean ejecuta= false;
         try {
@@ -97,9 +103,9 @@ public class ConectaDb {
         }
         return false;
     }
-    //----------------------fin del metodo
+//</editor-fold>
 
-    //------------
+    //<editor-fold defaultstate="collapsed" desc="Metodo que retorna cantidad de filas" >
     public int rowCount(ResultSet resultado) {
         int i = 0;
         try {
@@ -111,9 +117,10 @@ public class ConectaDb {
             Logger.getLogger(ConectaDb.class.getName()).log(Level.SEVERE, null, ex);
         }
         return i;
-
     }
+//</editor-fold>
 
+    //<editor-fold defaultstate="collapsed" desc="Metodo que retorna un valor si existe el registro en la BD" >
     public int generaConsulta(String cadenaSql) throws SQLException {
         int resultado = 0;
 
@@ -125,8 +132,10 @@ public class ConectaDb {
         }
         return resultado;
     }
- //metodo para generar una cadena
-    public String generaCadena(String cadenaSql) throws SQLException{
+//</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="Metodo que retorna una cadena desde la BD" >
+    public String generaCadena(String cadenaSql) throws SQLException {
         String resultado = "";
 
         Statement st = conection.createStatement();
@@ -136,18 +145,18 @@ public class ConectaDb {
             resultado = rs.getString(1);
         }
         return resultado;
-    } 
-    //----------------------
+    }
+//</editor-fold>
 
-  public static void main(String arsg[] ) throws SQLException{
- ConectaDb cc = new ConectaDb();
-     cc.conectar();
-//     String sql="Select * from usuario where usuario='kfalarcon' and contrasena='12345'";
-//      System.out.println(cc.generaConsulta(sql));
-
-    String sql = "select registro_nombre|| ' ' || registro_apellido from registroUsuario where registro_documento = 1061782493";
-      System.out.println(cc.generaCadena(sql));
-      
-  }
-
+//  public static void main(String arsg[] ) throws SQLException{
+// ConectaDb cc = new ConectaDb();
+//     cc.conectar();
+////     String sql="Select * from usuario where usuario='kfalarcon' and contrasena='12345'";
+////      System.out.println(cc.generaConsulta(sql));
+//
+//    //String sql = "select registro_nombre|| ' ' || registro_apellido from registroUsuario where registro_documento = 1061782493";
+//    String sql = "select tituloPelicula || ',' || fechaEstreno || ',' || clasificacionPelicula || ',' || sipnosispelicula || ',' || paisOrigenPelicula || ',' || duracionPelicula || ',' || repartoPelicula || ',' || directorPelicula || ',' || generoPelicula || ',' || idiomaPelicula from Peliculas where tituloPelicula = 'EL HOMBRE INVISIBLE'";  
+//    System.out.println(cc.generaCadena(sql));
+//      
+//  }
 }

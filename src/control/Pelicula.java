@@ -7,12 +7,11 @@
  */
 package control;
 
-import java.util.Date;
-
 public class Pelicula {
-
+    
+    //<editor-fold defaultstate="collapsed" desc="Atributos" >
     private String tituloPelicula;
-    private Date fechaEstreno;
+    private String fechaEstreno;
     private String Clasificación;
     private String Sinopsis;
     private String paisOrigen;
@@ -21,8 +20,14 @@ public class Pelicula {
     private String director;
     private String genero;
     private String idioma;
+//</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="Constructor por defecto y parametrizado" >
+    public Pelicula() {
+    }
 
-    public Pelicula(String tituloPelicula, Date fechaEstreno, String Clasificación, String Sinopsis, String paisOrigen, String duracion, String reparto, String director, String genero, String idioma) {
+    
+    public Pelicula(String tituloPelicula, String fechaEstreno, String Clasificación, String Sinopsis, String paisOrigen, String duracion, String reparto, String director, String genero, String idioma) {
         this.tituloPelicula = tituloPelicula;
         this.fechaEstreno = fechaEstreno;
         this.Clasificación = Clasificación;
@@ -34,7 +39,9 @@ public class Pelicula {
         this.genero = genero;
         this.idioma = idioma;
     }
-
+//</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="Getter y Setter" >
     public String getTituloPelicula() {
         return tituloPelicula;
     }
@@ -43,11 +50,11 @@ public class Pelicula {
         this.tituloPelicula = tituloPelicula;
     }
 
-    public Date getFechaEstreno() {
+    public String getFechaEstreno() {
         return fechaEstreno;
     }
 
-    public void setFechaEstreno(Date fechaEstreno) {
+    public void setFechaEstreno(String fechaEstreno) {
         this.fechaEstreno = fechaEstreno;
     }
 
@@ -114,4 +121,6 @@ public class Pelicula {
     public void setIdioma(String idioma) {
         this.idioma = idioma;
     }
+//</editor-fold>
+
 }

@@ -7,6 +7,8 @@
  */
 package vista;
 
+import java.sql.SQLException;
+
 public class panelPreventa extends javax.swing.JPanel {
 
     public panelPreventa() {
@@ -194,23 +196,48 @@ public class panelPreventa extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnComparBoleta5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta5ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String ruta = "src/image/gloodbooster.jpeg";
+            new panelInfoPeliculas("GHOSTBUSTERS: EL LEGADO",ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoleta5ActionPerformed
 
     private void btnComparBoleta6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta6ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String ruta = "src/image/la princesa y el dragon.jpeg";
+            new panelInfoPeliculas("LA PRINCESA Y EL DRAGÓN",ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoleta6ActionPerformed
 
     private void btnComparBoleta7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta7ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String ruta = "src/image/conmigo.jpeg";
+            new panelInfoPeliculas("MIENTRAS ESTÉS CONMIGO",ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoleta7ActionPerformed
 
     private void btnComparBoleta8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta8ActionPerformed
-        // TODO add your handling code here:
+       try {
+            String ruta = "src/image/tenet.jpeg";
+            new panelInfoPeliculas("TENET",ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoleta8ActionPerformed
 
     private void btnComparBoleta9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta9ActionPerformed
-        // TODO add your handling code here:
+       try {
+            String ruta = "src/image/totgon.jpeg";
+            new panelInfoPeliculas("TOP GUN",ruta).setVisible(true);
+        } catch (SQLException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnComparBoleta9ActionPerformed
 
     private void lbl1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl1MouseMoved
