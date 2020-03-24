@@ -62,7 +62,6 @@ public class panelCartelera extends javax.swing.JPanel {
         btnComparBoleta9 = new javax.swing.JButton();
         contenedorBuscar = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
         cbxPelicula = new javax.swing.JComboBox<>();
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/El llamado salvaje.jpg"))); // NOI18N
@@ -354,7 +353,7 @@ public class panelCartelera extends javax.swing.JPanel {
 
         jspPeliculas.setViewportView(contenedorCartelera);
 
-        add(jspPeliculas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 45, 480, 400));
+        add(jspPeliculas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 480, 440));
 
         contenedorBuscar.setBackground(new java.awt.Color(255, 255, 255));
         contenedorBuscar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -364,9 +363,6 @@ public class panelCartelera extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Search_32px_2.png"))); // NOI18N
         jLabel2.setText("BUSCAR PELÍCULAS EN CARTELERA:");
         contenedorBuscar.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
-
-        jSeparator2.setForeground(new java.awt.Color(102, 102, 102));
-        contenedorBuscar.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 49, 170, 10));
 
         cbxPelicula.setBackground(new java.awt.Color(238, 112, 82));
         cbxPelicula.setEditable(true);
@@ -669,7 +665,6 @@ public class panelCartelera extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JScrollPane jspPeliculas;
     private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl10;

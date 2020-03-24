@@ -49,7 +49,6 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         panelContenedorInfoPel = new javax.swing.JPanel();
         lblIdioma = new javax.swing.JLabel();
         lblTituloPel = new javax.swing.JLabel();
@@ -77,8 +76,9 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         areaSinopsis = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane(contReparto,jScrollPane2.VERTICAL_SCROLLBAR_NEVER, jScrollPane2.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         contReparto = new javax.swing.JTextArea();
-
-        jLabel1.setText("jLabel1");
+        jdcFecha = new com.toedter.calendar.JDateChooser();
+        lblSelecDia = new javax.swing.JLabel();
+        lblinfoPel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,88 +89,88 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         lblIdioma.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblIdioma.setForeground(new java.awt.Color(238, 112, 82));
         lblIdioma.setText("Idioma Original:");
-        panelContenedorInfoPel.add(lblIdioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+        panelContenedorInfoPel.add(lblIdioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
 
         lblTituloPel.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblTituloPel.setForeground(new java.awt.Color(238, 112, 82));
         lblTituloPel.setText("Título Original:");
-        panelContenedorInfoPel.add(lblTituloPel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        panelContenedorInfoPel.add(lblTituloPel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         lblFechaEstreno.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblFechaEstreno.setForeground(new java.awt.Color(238, 112, 82));
         lblFechaEstreno.setText("Fecha de estreno:");
-        panelContenedorInfoPel.add(lblFechaEstreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        panelContenedorInfoPel.add(lblFechaEstreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         lblClasificacion.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblClasificacion.setForeground(new java.awt.Color(238, 112, 82));
         lblClasificacion.setText("Clasificación:");
-        panelContenedorInfoPel.add(lblClasificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        panelContenedorInfoPel.add(lblClasificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
         lblSinopsis.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblSinopsis.setForeground(new java.awt.Color(238, 112, 82));
         lblSinopsis.setText("Sinopsis:");
-        panelContenedorInfoPel.add(lblSinopsis, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+        panelContenedorInfoPel.add(lblSinopsis, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
 
         lblPaisOrigen.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblPaisOrigen.setForeground(new java.awt.Color(238, 112, 82));
         lblPaisOrigen.setText("Pais Origen:");
-        panelContenedorInfoPel.add(lblPaisOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+        panelContenedorInfoPel.add(lblPaisOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
         lblDuracion.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblDuracion.setForeground(new java.awt.Color(238, 112, 82));
         lblDuracion.setText("Duración:");
-        panelContenedorInfoPel.add(lblDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+        panelContenedorInfoPel.add(lblDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
         lblReparto.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblReparto.setForeground(new java.awt.Color(238, 112, 82));
         lblReparto.setText("Reparto:");
-        panelContenedorInfoPel.add(lblReparto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+        panelContenedorInfoPel.add(lblReparto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
 
         lblDirector.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblDirector.setForeground(new java.awt.Color(238, 112, 82));
         lblDirector.setText("Director:");
-        panelContenedorInfoPel.add(lblDirector, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        panelContenedorInfoPel.add(lblDirector, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
 
         lblGenero.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblGenero.setForeground(new java.awt.Color(238, 112, 82));
         lblGenero.setText("Género:");
-        panelContenedorInfoPel.add(lblGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        panelContenedorInfoPel.add(lblGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
 
         contTitulo.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contTitulo.setText("**********************************");
-        panelContenedorInfoPel.add(contTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 250, -1));
+        panelContenedorInfoPel.add(contTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 250, -1));
 
         contFechaEstreno.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contFechaEstreno.setText("**********************************");
-        panelContenedorInfoPel.add(contFechaEstreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 230, 20));
+        panelContenedorInfoPel.add(contFechaEstreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 230, 20));
 
         contClasificacion.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contClasificacion.setText("**********************************");
-        panelContenedorInfoPel.add(contClasificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 250, 20));
+        panelContenedorInfoPel.add(contClasificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 250, 20));
 
         contPaisOrigen.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contPaisOrigen.setText("**********************************");
-        panelContenedorInfoPel.add(contPaisOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 250, 20));
+        panelContenedorInfoPel.add(contPaisOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 250, 20));
 
         contDuracion.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contDuracion.setText("**********************************");
-        panelContenedorInfoPel.add(contDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 280, 20));
+        panelContenedorInfoPel.add(contDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 280, 20));
 
         contDirector.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contDirector.setText("**********************************");
-        panelContenedorInfoPel.add(contDirector, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 290, 20));
+        panelContenedorInfoPel.add(contDirector, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 290, 20));
 
         contGenero.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contGenero.setText("**********************************");
-        panelContenedorInfoPel.add(contGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 300, 20));
+        panelContenedorInfoPel.add(contGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 300, 20));
 
         contIdioma.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contIdioma.setText("**********************************");
-        panelContenedorInfoPel.add(contIdioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 270, 20));
+        panelContenedorInfoPel.add(contIdioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 270, 20));
 
         lblImagen.setLabelFor(lblImagen);
         lblImagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        panelContenedorInfoPel.add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 100, 130));
+        panelContenedorInfoPel.add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 100, 130));
 
         btnMinimizar.setBackground(new java.awt.Color(238, 112, 82));
         btnMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Expand_Arrow_32px.png"))); // NOI18N
@@ -202,7 +202,7 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
                 btnComparBoletaActionPerformed(evt);
             }
         });
-        panelContenedorInfoPel.add(btnComparBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 470, -1, 20));
+        panelContenedorInfoPel.add(btnComparBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, -1, 20));
 
         areaSinopsis.setColumns(20);
         areaSinopsis.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
@@ -210,7 +210,7 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         areaSinopsis.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jScrollPane1.setViewportView(areaSinopsis);
 
-        panelContenedorInfoPel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 390, 150));
+        panelContenedorInfoPel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 390, 120));
 
         contReparto.setColumns(20);
         contReparto.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
@@ -218,7 +218,21 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         contReparto.setBorder(null);
         jScrollPane2.setViewportView(contReparto);
 
-        panelContenedorInfoPel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 370, 50));
+        panelContenedorInfoPel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 370, 50));
+
+        jdcFecha.setForeground(new java.awt.Color(153, 153, 153));
+        jdcFecha.setFont(new java.awt.Font("Dialog", 0, 11)); // NOI18N
+        panelContenedorInfoPel.add(jdcFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 140, -1));
+
+        lblSelecDia.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        lblSelecDia.setForeground(new java.awt.Color(153, 153, 153));
+        lblSelecDia.setText("Seleccione un día:");
+        panelContenedorInfoPel.add(lblSelecDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+
+        lblinfoPel.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        lblinfoPel.setForeground(new java.awt.Color(153, 153, 153));
+        lblinfoPel.setText("Información de la pelicula");
+        panelContenedorInfoPel.add(lblinfoPel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -228,7 +242,7 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelContenedorInfoPel, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+            .addComponent(panelContenedorInfoPel, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
         );
 
         pack();
@@ -291,9 +305,9 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
     private javax.swing.JLabel contPaisOrigen;
     private javax.swing.JTextArea contReparto;
     private javax.swing.JLabel contTitulo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private com.toedter.calendar.JDateChooser jdcFecha;
     private javax.swing.JLabel lblClasificacion;
     private javax.swing.JLabel lblDirector;
     private javax.swing.JLabel lblDuracion;
@@ -304,8 +318,10 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
     private javax.swing.JLabel lblPaisOrigen;
     private javax.swing.JLabel lblReparto;
     private javax.swing.JLabel lblSalir;
+    private javax.swing.JLabel lblSelecDia;
     private javax.swing.JLabel lblSinopsis;
     private javax.swing.JLabel lblTituloPel;
+    private javax.swing.JLabel lblinfoPel;
     private javax.swing.JPanel panelContenedorInfoPel;
     // End of variables declaration//GEN-END:variables
 }

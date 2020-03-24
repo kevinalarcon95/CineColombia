@@ -36,7 +36,7 @@ public class panelPrincipal extends javax.swing.JFrame {
         contenedor.revalidate();
         contenedor.repaint();
     }
-
+    
 // <editor-fold defaultstate="collapsed" desc="Metodo que permite extraer la fecha del sistema">
     public static String fecha() {
         Date fecha = new Date();
