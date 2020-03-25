@@ -1,17 +1,30 @@
 package vista;
 
+import com.toedter.calendar.JCalendar;
+import com.toedter.calendar.JTextFieldDateEditor;
+import com.toedter.calendar.MinMaxDateEvaluator;
 import control.DAOGestionPelicula;
 import control.Pelicula;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
+import recursos.RangeEvaluator;
 public class panelInfoPeliculas extends javax.swing.JFrame {
     
-    public panelInfoPeliculas() {
+    public panelInfoPeliculas() throws ParseException {
+
         initComponents();
+        
     }
     
     public panelInfoPeliculas(String nombrePelicula, String ruta) throws SQLException {
@@ -76,9 +89,9 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         areaSinopsis = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane(contReparto,jScrollPane2.VERTICAL_SCROLLBAR_NEVER, jScrollPane2.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         contReparto = new javax.swing.JTextArea();
-        jdcFecha = new com.toedter.calendar.JDateChooser();
         lblSelecDia = new javax.swing.JLabel();
         lblinfoPel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -220,10 +233,6 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
 
         panelContenedorInfoPel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 370, 50));
 
-        jdcFecha.setForeground(new java.awt.Color(153, 153, 153));
-        jdcFecha.setFont(new java.awt.Font("Dialog", 0, 11)); // NOI18N
-        panelContenedorInfoPel.add(jdcFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 140, -1));
-
         lblSelecDia.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lblSelecDia.setForeground(new java.awt.Color(153, 153, 153));
         lblSelecDia.setText("Seleccione un día:");
@@ -233,6 +242,9 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         lblinfoPel.setForeground(new java.awt.Color(153, 153, 153));
         lblinfoPel.setText("Información de la pelicula");
         panelContenedorInfoPel.add(lblinfoPel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+
+        jLabel1.setText("Hora Funcion: 2pm");
+        panelContenedorInfoPel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -287,7 +299,11 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new panelInfoPeliculas().setVisible(true);
+                try {
+                    new panelInfoPeliculas().setVisible(true);
+                } catch (ParseException ex) {
+                    Logger.getLogger(panelInfoPeliculas.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -305,9 +321,9 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
     private javax.swing.JLabel contPaisOrigen;
     private javax.swing.JTextArea contReparto;
     private javax.swing.JLabel contTitulo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private com.toedter.calendar.JDateChooser jdcFecha;
     private javax.swing.JLabel lblClasificacion;
     private javax.swing.JLabel lblDirector;
     private javax.swing.JLabel lblDuracion;
