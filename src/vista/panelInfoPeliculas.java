@@ -1,8 +1,5 @@
 package vista;
 
-import com.toedter.calendar.JCalendar;
-import com.toedter.calendar.JTextFieldDateEditor;
-import com.toedter.calendar.MinMaxDateEvaluator;
 import control.DAOGestionPelicula;
 import control.Pelicula;
 import java.sql.SQLException;
@@ -18,13 +15,10 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import recursos.RangeEvaluator;
 public class panelInfoPeliculas extends javax.swing.JFrame {
     
     public panelInfoPeliculas() throws ParseException {
-
         initComponents();
-        
     }
     
     public panelInfoPeliculas(String nombrePelicula, String ruta) throws SQLException {
