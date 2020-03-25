@@ -9,12 +9,12 @@ package vista;
  *
  * @author Kevin Alarcón
  */
-public class panelComprarBoleta extends javax.swing.JPanel {
+public class panelCompraBoleta extends javax.swing.JPanel {
 
     /**
      * Creates new form panelComprarBoleta
      */
-    public panelComprarBoleta() {
+    public panelCompraBoleta() {
         initComponents();
     }
 

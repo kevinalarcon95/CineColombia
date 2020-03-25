@@ -8,6 +8,9 @@
 package vista;
 
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class panelProximosEstrenos extends javax.swing.JPanel {
 
@@ -355,6 +358,8 @@ public class panelProximosEstrenos extends javax.swing.JPanel {
             new panelInfoPeliculas("EL HOMBRE INVISIBLE", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelProximosEstrenos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoletaActionPerformed
 
@@ -364,6 +369,8 @@ public class panelProximosEstrenos extends javax.swing.JPanel {
             new panelInfoPeliculas("BOB ESPONJA AL RESCATE", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelProximosEstrenos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta1ActionPerformed
 
@@ -373,6 +380,8 @@ public class panelProximosEstrenos extends javax.swing.JPanel {
             new panelInfoPeliculas("BLOODSHOT", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelProximosEstrenos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta2ActionPerformed
 
@@ -382,6 +391,8 @@ public class panelProximosEstrenos extends javax.swing.JPanel {
             new panelInfoPeliculas("EN EL BARRIO", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelProximosEstrenos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta3ActionPerformed
 
@@ -391,6 +402,8 @@ public class panelProximosEstrenos extends javax.swing.JPanel {
             new panelInfoPeliculas("SOUL", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelProximosEstrenos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta4ActionPerformed
 
@@ -400,6 +413,8 @@ public class panelProximosEstrenos extends javax.swing.JPanel {
             new panelInfoPeliculas("MINIONS 2: NACE UN VILLANO", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelProximosEstrenos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta5ActionPerformed
 
@@ -409,6 +424,8 @@ public class panelProximosEstrenos extends javax.swing.JPanel {
             new panelInfoPeliculas("FREE GUY: TOMANDO EL CONTROL", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelProximosEstrenos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta6ActionPerformed
 
@@ -418,6 +435,8 @@ public class panelProximosEstrenos extends javax.swing.JPanel {
             new panelInfoPeliculas("RÁPIDOS Y FURIOSOS 9", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelProximosEstrenos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta7ActionPerformed
 
@@ -427,6 +446,8 @@ public class panelProximosEstrenos extends javax.swing.JPanel {
             new panelInfoPeliculas("MUJER MARAVILLA 1984", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelProximosEstrenos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta8ActionPerformed
 
@@ -436,6 +457,8 @@ public class panelProximosEstrenos extends javax.swing.JPanel {
             new panelInfoPeliculas("MULÁN", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelProximosEstrenos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta9ActionPerformed
 

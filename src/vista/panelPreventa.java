@@ -8,6 +8,9 @@
 package vista;
 
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class panelPreventa extends javax.swing.JPanel {
 
@@ -201,6 +204,8 @@ public class panelPreventa extends javax.swing.JPanel {
             new panelInfoPeliculas("GHOSTBUSTERS: EL LEGADO",ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelPreventa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta5ActionPerformed
 
@@ -210,6 +215,8 @@ public class panelPreventa extends javax.swing.JPanel {
             new panelInfoPeliculas("LA PRINCESA Y EL DRAGÓN",ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelPreventa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta6ActionPerformed
 
@@ -219,6 +226,8 @@ public class panelPreventa extends javax.swing.JPanel {
             new panelInfoPeliculas("MIENTRAS ESTÉS CONMIGO",ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelPreventa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta7ActionPerformed
 
@@ -228,6 +237,8 @@ public class panelPreventa extends javax.swing.JPanel {
             new panelInfoPeliculas("TENET",ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelPreventa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta8ActionPerformed
 
@@ -237,6 +248,8 @@ public class panelPreventa extends javax.swing.JPanel {
             new panelInfoPeliculas("TOP GUN",ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelPreventa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta9ActionPerformed
 

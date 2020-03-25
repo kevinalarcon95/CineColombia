@@ -7,14 +7,10 @@
  */
 package vista;
 
-import java.awt.Image;
-import java.io.File;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 public class panelCartelera extends javax.swing.JPanel {
 
@@ -22,7 +18,7 @@ public class panelCartelera extends javax.swing.JPanel {
         initComponents();
 
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -383,10 +379,13 @@ public class panelCartelera extends javax.swing.JPanel {
 
     private void btnComparBoleta0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoleta0ActionPerformed
         try {
+            String nomPeli = "ANGEL DE MI VIDA";
             String ruta = "src/image/angeldemivida-6-marzo-2020.jpg";
-            new panelInfoPeliculas("ANGEL DE MI VIDA", ruta).setVisible(true);
+            new panelInfoPeliculas(nomPeli, ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta0ActionPerformed
 
@@ -395,7 +394,9 @@ public class panelCartelera extends javax.swing.JPanel {
             String ruta = "src/image/El hombre invisible.png";
             new panelInfoPeliculas("EL HOMBRE INVISIBLE", ruta).setVisible(true);
         } catch (SQLException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.ERROR);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta1ActionPerformed
 
@@ -405,6 +406,8 @@ public class panelCartelera extends javax.swing.JPanel {
             new panelInfoPeliculas("MUJERCITAS", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta2ActionPerformed
 
@@ -414,6 +417,8 @@ public class panelCartelera extends javax.swing.JPanel {
             new panelInfoPeliculas("PARÁSITO", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta3ActionPerformed
 
@@ -423,6 +428,8 @@ public class panelCartelera extends javax.swing.JPanel {
             new panelInfoPeliculas("EL LLAMADO SALVAJE", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta4ActionPerformed
 
@@ -432,6 +439,8 @@ public class panelCartelera extends javax.swing.JPanel {
             new panelInfoPeliculas("1917", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta5ActionPerformed
 
@@ -441,6 +450,8 @@ public class panelCartelera extends javax.swing.JPanel {
             new panelInfoPeliculas("LOS CABALLEROS", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta6ActionPerformed
 
@@ -450,6 +461,8 @@ public class panelCartelera extends javax.swing.JPanel {
             new panelInfoPeliculas("LA HORA DE TU MUERTE", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta7ActionPerformed
 
@@ -459,6 +472,8 @@ public class panelCartelera extends javax.swing.JPanel {
             new panelInfoPeliculas("SONIC LA PELÍCULA", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta8ActionPerformed
 
@@ -468,6 +483,8 @@ public class panelCartelera extends javax.swing.JPanel {
             new panelInfoPeliculas("UNIDOS", ruta).setVisible(true);
         } catch (SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (ParseException ex) {
+            Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComparBoleta9ActionPerformed
 //Metodo para el buscar por pelicula
@@ -480,80 +497,110 @@ public class panelCartelera extends javax.swing.JPanel {
                     new panelInfoPeliculas("ANGEL DE MI VIDA", ruta).setVisible(true);
                 } catch (SQLException ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                }
+                } catch (ParseException ex) {
+                Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 break;
+
             case 2:
                 try {
                     String ruta = "src/image/El hombre invisible.png";
                     new panelInfoPeliculas("EL HOMBRE INVISIBLE", ruta).setVisible(true);
                 } catch (SQLException ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                }
+                } catch (ParseException ex) {
+                Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 break;
+
             case 3:
                 try {
                     String ruta = "src/image/mjercias13nov2019.png";
                     new panelInfoPeliculas("MUJERCITAS", ruta).setVisible(true);
                 } catch (SQLException ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                }
+                } catch (ParseException ex) {
+                Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 break;
+
             case 4:
                 try {
                     String ruta = "src/image/parasito.png";
                     new panelInfoPeliculas("PARÁSITO", ruta).setVisible(true);
                 } catch (SQLException ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                }
+                } catch (ParseException ex) {
+                Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 break;
+
             case 5:
                 try {
                     String ruta = "src/image/El llamado salvaje.jpg";
                     new panelInfoPeliculas("EL LLAMADO SALVAJE", ruta).setVisible(true);
                 } catch (SQLException ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                }
+                } catch (ParseException ex) {
+                Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 break;
+
             case 6:
                 try {
                     String ruta = "src/image/1957.jpg";
                     new panelInfoPeliculas("1917", ruta).setVisible(true);
                 } catch (SQLException ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                }
+                } catch (ParseException ex) {
+                Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 break;
+
             case 7:
                 try {
                     String ruta = "src/image/Los caballeros.jpg";
                     new panelInfoPeliculas("LOS CABALLEROS", ruta).setVisible(true);
                 } catch (SQLException ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                }
+                } catch (ParseException ex) {
+                Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 break;
+
             case 8:
                 try {
                     String ruta = "src/image/la hora de la muerte.jpeg";
                     new panelInfoPeliculas("LA HORA DE TU MUERTE", ruta).setVisible(true);
                 } catch (SQLException ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                }
+                } catch (ParseException ex) {
+                Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 break;
+
             case 9:
                 try {
                     String ruta = "src/image/sonic.jpeg";
                     new panelInfoPeliculas("SONIC LA PELÍCULA", ruta).setVisible(true);
                 } catch (SQLException ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                }
+                } catch (ParseException ex) {
+                Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 break;
+
             case 10:
                 try {
                     String ruta = "src/image/unidos.jpeg";
                     new panelInfoPeliculas("UNIDOS", ruta).setVisible(true);
                 } catch (SQLException ex) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Error en la conexión con la BD \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                }
+                } catch (ParseException ex) {
+                Logger.getLogger(panelCartelera.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 break;
+
 
         }
     }//GEN-LAST:event_cbxPeliculaActionPerformed

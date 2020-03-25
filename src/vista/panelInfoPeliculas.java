@@ -1,35 +1,63 @@
 package vista;
 
+import control.DAOGestionFuncion;
 import control.DAOGestionPelicula;
+import control.Funcion;
 import control.Pelicula;
 import java.sql.SQLException;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.JTextField;
 public class panelInfoPeliculas extends javax.swing.JFrame {
     
     public panelInfoPeliculas() throws ParseException {
         initComponents();
     }
     
-    public panelInfoPeliculas(String nombrePelicula, String ruta) throws SQLException {
+    public panelInfoPeliculas(String nombrePelicula, String ruta) throws SQLException, ParseException {
         this.setUndecorated(true);
         initComponents();
+        ((JTextField) this.DateFecha.getDateEditor()).setEditable(false); 
         setLocationRelativeTo(null);
         this.setResizable(false);
         infoPel(nombrePelicula);
         lblImagen.setIcon(new ImageIcon(ruta));
+        String fechaPel = fechaPelicula(nombrePelicula);
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date dateF1 = formatter.parse(fechaPel);
+        this.DateFecha.setSelectableDateRange(dateF1, dateF1);
+        horasFuncion(nombrePelicula);
+        validarEfecto(nombrePelicula);
     }
     
+    public void validarEfecto(String nomPelicula) throws SQLException{
+        Funcion fun = new Funcion();
+        DAOGestionFuncion daoFun = new DAOGestionFuncion();
+        String efecto = daoFun.efectoPelicula(nomPelicula);
+        fun = daoFun.splitEfectos(efecto);
+        String efecto3D = fun.getEfectos().get(1);
+        if(efecto3D.equals("vacio")){
+            btnEfecto3D.setEnabled(false);
+        }
+    }
+    
+    public void horasFuncion(String nomPelicula) throws SQLException {
+        DAOGestionFuncion daoFun = new DAOGestionFuncion();
+        Funcion fun = new Funcion();
+        String horas = daoFun.horaFuncion(nomPelicula);
+        fun = daoFun.splitHoras(horas);
+        btnHoraFuncion1.setText(fun.getHoraFuncion1());   
+        btnHoraFuncion2.setText(fun.getHoraFuncion2());
+    }
+    
+    public String fechaPelicula(String nombrePelicula) throws SQLException{
+        DAOGestionFuncion daoFun = new DAOGestionFuncion();
+        String fechaPel = daoFun.fechaFuncion(nombrePelicula);
+        return fechaPel;
+    }
     public void infoPel(String nomPelicula) throws SQLException{
         DAOGestionPelicula daoPel = new DAOGestionPelicula();
         Pelicula pel = new Pelicula();
@@ -56,6 +84,8 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         panelContenedorInfoPel = new javax.swing.JPanel();
         lblIdioma = new javax.swing.JLabel();
         lblTituloPel = new javax.swing.JLabel();
@@ -78,14 +108,20 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         lblImagen = new javax.swing.JLabel();
         btnMinimizar = new javax.swing.JButton();
         lblSalir = new javax.swing.JLabel();
-        btnComparBoleta = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         areaSinopsis = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane(contReparto,jScrollPane2.VERTICAL_SCROLLBAR_NEVER, jScrollPane2.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         contReparto = new javax.swing.JTextArea();
+        jPanel2 = new javax.swing.JPanel();
         lblSelecDia = new javax.swing.JLabel();
-        lblinfoPel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        DateFecha = new com.toedter.calendar.JDateChooser();
+        jSeparator1 = new javax.swing.JSeparator();
+        btnEfecto3D = new javax.swing.JRadioButton();
+        btnHoraFuncion1 = new javax.swing.JRadioButton();
+        btnHoraFuncion2 = new javax.swing.JRadioButton();
+        btnEfecto2D = new javax.swing.JRadioButton();
+        btnConfirmar = new javax.swing.JButton();
+        lblPrueba = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,88 +132,88 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         lblIdioma.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblIdioma.setForeground(new java.awt.Color(238, 112, 82));
         lblIdioma.setText("Idioma Original:");
-        panelContenedorInfoPel.add(lblIdioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
+        panelContenedorInfoPel.add(lblIdioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
 
         lblTituloPel.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblTituloPel.setForeground(new java.awt.Color(238, 112, 82));
         lblTituloPel.setText("Título Original:");
-        panelContenedorInfoPel.add(lblTituloPel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+        panelContenedorInfoPel.add(lblTituloPel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
         lblFechaEstreno.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblFechaEstreno.setForeground(new java.awt.Color(238, 112, 82));
         lblFechaEstreno.setText("Fecha de estreno:");
-        panelContenedorInfoPel.add(lblFechaEstreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+        panelContenedorInfoPel.add(lblFechaEstreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
         lblClasificacion.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblClasificacion.setForeground(new java.awt.Color(238, 112, 82));
         lblClasificacion.setText("Clasificación:");
-        panelContenedorInfoPel.add(lblClasificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        panelContenedorInfoPel.add(lblClasificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
         lblSinopsis.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblSinopsis.setForeground(new java.awt.Color(238, 112, 82));
         lblSinopsis.setText("Sinopsis:");
-        panelContenedorInfoPel.add(lblSinopsis, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
+        panelContenedorInfoPel.add(lblSinopsis, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, -1));
 
         lblPaisOrigen.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblPaisOrigen.setForeground(new java.awt.Color(238, 112, 82));
         lblPaisOrigen.setText("Pais Origen:");
-        panelContenedorInfoPel.add(lblPaisOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+        panelContenedorInfoPel.add(lblPaisOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
 
         lblDuracion.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblDuracion.setForeground(new java.awt.Color(238, 112, 82));
         lblDuracion.setText("Duración:");
-        panelContenedorInfoPel.add(lblDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+        panelContenedorInfoPel.add(lblDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
         lblReparto.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblReparto.setForeground(new java.awt.Color(238, 112, 82));
         lblReparto.setText("Reparto:");
-        panelContenedorInfoPel.add(lblReparto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
+        panelContenedorInfoPel.add(lblReparto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         lblDirector.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblDirector.setForeground(new java.awt.Color(238, 112, 82));
         lblDirector.setText("Director:");
-        panelContenedorInfoPel.add(lblDirector, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+        panelContenedorInfoPel.add(lblDirector, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
 
         lblGenero.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblGenero.setForeground(new java.awt.Color(238, 112, 82));
         lblGenero.setText("Género:");
-        panelContenedorInfoPel.add(lblGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
+        panelContenedorInfoPel.add(lblGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
 
         contTitulo.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contTitulo.setText("**********************************");
-        panelContenedorInfoPel.add(contTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 250, -1));
+        panelContenedorInfoPel.add(contTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 270, -1));
 
         contFechaEstreno.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contFechaEstreno.setText("**********************************");
-        panelContenedorInfoPel.add(contFechaEstreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 230, 20));
+        panelContenedorInfoPel.add(contFechaEstreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 250, 20));
 
         contClasificacion.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contClasificacion.setText("**********************************");
-        panelContenedorInfoPel.add(contClasificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 250, 20));
+        panelContenedorInfoPel.add(contClasificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 270, 20));
 
         contPaisOrigen.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contPaisOrigen.setText("**********************************");
-        panelContenedorInfoPel.add(contPaisOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 250, 20));
+        panelContenedorInfoPel.add(contPaisOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 280, 20));
 
         contDuracion.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contDuracion.setText("**********************************");
-        panelContenedorInfoPel.add(contDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 280, 20));
+        panelContenedorInfoPel.add(contDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 300, 20));
 
         contDirector.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contDirector.setText("**********************************");
-        panelContenedorInfoPel.add(contDirector, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 290, 20));
+        panelContenedorInfoPel.add(contDirector, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 290, 20));
 
         contGenero.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contGenero.setText("**********************************");
-        panelContenedorInfoPel.add(contGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 300, 20));
+        panelContenedorInfoPel.add(contGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 300, 20));
 
         contIdioma.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         contIdioma.setText("**********************************");
-        panelContenedorInfoPel.add(contIdioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 270, 20));
+        panelContenedorInfoPel.add(contIdioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 270, 20));
 
         lblImagen.setLabelFor(lblImagen);
         lblImagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        panelContenedorInfoPel.add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 100, 130));
+        panelContenedorInfoPel.add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 100, 130));
 
         btnMinimizar.setBackground(new java.awt.Color(238, 112, 82));
         btnMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Expand_Arrow_32px.png"))); // NOI18N
@@ -201,23 +237,13 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         });
         panelContenedorInfoPel.add(lblSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 30, 20));
 
-        btnComparBoleta.setBackground(new java.awt.Color(153, 153, 153));
-        btnComparBoleta.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        btnComparBoleta.setText("Comprar Boletas");
-        btnComparBoleta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnComparBoletaActionPerformed(evt);
-            }
-        });
-        panelContenedorInfoPel.add(btnComparBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, -1, 20));
-
         areaSinopsis.setColumns(20);
         areaSinopsis.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         areaSinopsis.setRows(5);
         areaSinopsis.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jScrollPane1.setViewportView(areaSinopsis);
 
-        panelContenedorInfoPel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 390, 120));
+        panelContenedorInfoPel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 400, 120));
 
         contReparto.setColumns(20);
         contReparto.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
@@ -225,20 +251,54 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         contReparto.setBorder(null);
         jScrollPane2.setViewportView(contReparto);
 
-        panelContenedorInfoPel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 370, 50));
+        panelContenedorInfoPel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 320, 30));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblSelecDia.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lblSelecDia.setForeground(new java.awt.Color(153, 153, 153));
         lblSelecDia.setText("Seleccione un día:");
-        panelContenedorInfoPel.add(lblSelecDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jPanel2.add(lblSelecDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        lblinfoPel.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        lblinfoPel.setForeground(new java.awt.Color(153, 153, 153));
-        lblinfoPel.setText("Información de la pelicula");
-        panelContenedorInfoPel.add(lblinfoPel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+        DateFecha.setBackground(new java.awt.Color(238, 112, 82));
+        DateFecha.setForeground(new java.awt.Color(238, 112, 82));
+        jPanel2.add(DateFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 120, -1));
 
-        jLabel1.setText("Hora Funcion: 2pm");
-        panelContenedorInfoPel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 10, 50));
+
+        btnEfecto3D.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup2.add(btnEfecto3D);
+        btnEfecto3D.setText("3D");
+        jPanel2.add(btnEfecto3D, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, -1, -1));
+
+        btnHoraFuncion1.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(btnHoraFuncion1);
+        jPanel2.add(btnHoraFuncion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
+
+        btnHoraFuncion2.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(btnHoraFuncion2);
+        jPanel2.add(btnHoraFuncion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+
+        btnEfecto2D.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup2.add(btnEfecto2D);
+        btnEfecto2D.setText("2D");
+        jPanel2.add(btnEfecto2D, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, -1, -1));
+
+        panelContenedorInfoPel.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 100));
+
+        btnConfirmar.setText("Confirmar");
+        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarActionPerformed(evt);
+            }
+        });
+        panelContenedorInfoPel.add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, -1, 20));
+
+        lblPrueba.setText("jLabel1");
+        panelContenedorInfoPel.add(lblPrueba, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -248,7 +308,7 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelContenedorInfoPel, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
+            .addComponent(panelContenedorInfoPel, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -262,50 +322,41 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         super.dispose();
     }//GEN-LAST:event_lblSalirMouseClicked
 
-    private void btnComparBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComparBoletaActionPerformed
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
 
-    }//GEN-LAST:event_btnComparBoletaActionPerformed
-
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(panelInfoPeliculas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(panelInfoPeliculas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(panelInfoPeliculas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(panelInfoPeliculas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        if (btnHoraFuncion1.isSelected() && !btnEfecto2D.isSelected()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Escoja un efecto de pelicula \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } else if (btnHoraFuncion1.isSelected() && btnEfecto2D.isSelected()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Entró \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }else if (btnHoraFuncion1.isSelected() && !btnEfecto3D.isSelected())
+        {
+            javax.swing.JOptionPane.showMessageDialog(this, "Escoja un efecto de pelicula \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }else if(btnHoraFuncion1.isSelected() && btnEfecto3D.isSelected()){
+            javax.swing.JOptionPane.showMessageDialog(this, "Entró \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        //hasta aqui validaciones btnHoraFuncion1 el boton 1
+        }else if(btnHoraFuncion2.isSelected() && !btnEfecto2D.isSelected()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Escoja un efecto de pelicula \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } else if (btnHoraFuncion2.isSelected() && btnEfecto2D.isSelected()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Entró \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }else if (btnHoraFuncion2.isSelected() && !btnEfecto3D.isSelected())
+        {
+            javax.swing.JOptionPane.showMessageDialog(this, "Escoja un efecto de pelicula \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }else if(btnHoraFuncion2.isSelected() && btnEfecto3D.isSelected()){
+            javax.swing.JOptionPane.showMessageDialog(this, "Entró \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    new panelInfoPeliculas().setVisible(true);
-                } catch (ParseException ex) {
-                    Logger.getLogger(panelInfoPeliculas.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-    }
+    }//GEN-LAST:event_btnConfirmarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser DateFecha;
     private javax.swing.JTextArea areaSinopsis;
-    private javax.swing.JButton btnComparBoleta;
+    private javax.swing.JButton btnConfirmar;
+    private javax.swing.JRadioButton btnEfecto2D;
+    private javax.swing.JRadioButton btnEfecto3D;
+    private javax.swing.JRadioButton btnHoraFuncion1;
+    private javax.swing.JRadioButton btnHoraFuncion2;
     private javax.swing.JButton btnMinimizar;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel contClasificacion;
     private javax.swing.JLabel contDirector;
     private javax.swing.JLabel contDuracion;
@@ -315,9 +366,10 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
     private javax.swing.JLabel contPaisOrigen;
     private javax.swing.JTextArea contReparto;
     private javax.swing.JLabel contTitulo;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblClasificacion;
     private javax.swing.JLabel lblDirector;
     private javax.swing.JLabel lblDuracion;
@@ -326,12 +378,12 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
     private javax.swing.JLabel lblIdioma;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblPaisOrigen;
+    private javax.swing.JLabel lblPrueba;
     private javax.swing.JLabel lblReparto;
     private javax.swing.JLabel lblSalir;
     private javax.swing.JLabel lblSelecDia;
     private javax.swing.JLabel lblSinopsis;
     private javax.swing.JLabel lblTituloPel;
-    private javax.swing.JLabel lblinfoPel;
     private javax.swing.JPanel panelContenedorInfoPel;
     // End of variables declaration//GEN-END:variables
 }
