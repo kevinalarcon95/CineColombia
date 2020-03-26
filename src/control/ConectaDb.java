@@ -147,6 +147,21 @@ public class ConectaDb {
         return resultado;
     }
 //</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="Metodo que retorna 0 o 1" >
+    public int existeDato(String cadenaSql) throws SQLException{
+        String resultado = "";
+        int valor = 0;
+        Statement st = conection.createStatement();
+        ResultSet rs = st.executeQuery(cadenaSql);
+
+        while (rs.next()) {
+            resultado = rs.getString(1);
+        }
+        valor = Integer.parseInt(resultado);
+        return valor;
+    }
+//</editor-fold>
 
 //  public static void main(String arsg[] ) throws SQLException{
 // ConectaDb cc = new ConectaDb();

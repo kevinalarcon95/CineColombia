@@ -78,6 +78,22 @@ public class DAOGestionFuncion {
     }
 //</editor-fold>
 
+    //<editor-fold defaultstate="collapsed" desc="Funcion que permite validar la existencia de una pelicula en una tabla" >
+    public boolean existePelicula(String cadena) throws SQLException{
+        boolean bandera = false;
+        int  resultado;
+        String sql = "select count(*) from funcion where tituloPelicula = '"+ cadena +"'";
+        conecta.conectar();
+        resultado = conecta.existeDato(sql);
+        conecta.cerrarConexion();
+        
+        if (resultado == 1){
+            bandera = true;
+        }
+        return bandera;
+    }
+//</editor-fold>
+    
 //     public static void main(String[] args) throws SQLException {
 //        //Usuario Rusuario;
 //        
@@ -90,7 +106,7 @@ public class DAOGestionFuncion {
 ////        dao.Usuario(us);
 //        //System.out.println(" esta ??" + dao.validarAcceso(us));
 //        
-//         System.out.println(dao.horaFuncion("EL HOMBRE INVISIBLE"));
+//         System.out.println(dao.existePelicula("EL HOMBRE INVISIBLE"));
 //
 //    }
 }

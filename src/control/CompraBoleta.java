@@ -7,23 +7,57 @@
  */package control;
 
 public class CompraBoleta {
+    private String duracion;
+    private String clasificacion;
+    private String sala;
     private String tituloPel;
     private String fecha;
     private String funcion;
-    private String clasificacion;
-    private String genero;
-    private String caracteristicas;
+    private String idioma;
+    private String efecto;
+    private int cantBoletas;
+    private long total;
+    private String medioPago;
 
     public CompraBoleta() {
     }
-
-    public CompraBoleta(String tituloPel, String fecha, String funcion, String clasificacion, String genero, String caracteristicas) {
+    
+    public CompraBoleta(String duracion, String clasificacion, String sala, String tituloPel, String fecha, String funcion, String idioma, String efecto, int cantBoletas, long total, String medioPago) {
+        this.duracion = duracion;
+        this.clasificacion = clasificacion;
+        this.sala = sala;
         this.tituloPel = tituloPel;
         this.fecha = fecha;
         this.funcion = funcion;
+        this.idioma = idioma;
+        this.efecto = efecto;
+        this.cantBoletas = cantBoletas;
+        this.total = total;
+        this.medioPago = medioPago;
+    }
+
+    public String getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(String duracion) {
+        this.duracion = duracion;
+    }
+
+    public String getClasificacion() {
+        return clasificacion;
+    }
+
+    public void setClasificacion(String clasificacion) {
         this.clasificacion = clasificacion;
-        this.genero = genero;
-        this.caracteristicas = caracteristicas;
+    }
+
+    public String getSala() {
+        return sala;
+    }
+
+    public void setSala(String sala) {
+        this.sala = sala;
     }
 
     public String getTituloPel() {
@@ -50,27 +84,43 @@ public class CompraBoleta {
         this.funcion = funcion;
     }
 
-    public String getClasificacion() {
-        return clasificacion;
+    public String getIdioma() {
+        return idioma;
     }
 
-    public void setClasificacion(String clasificacion) {
-        this.clasificacion = clasificacion;
+    public void setIdioma(String idioma) {
+        this.idioma = idioma;
     }
 
-    public String getGenero() {
-        return genero;
+    public String getEfecto() {
+        return efecto;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setEfecto(String efecto) {
+        this.efecto = efecto;
     }
 
-    public String getCaracteristicas() {
-        return caracteristicas;
+    public int getCantBoletas() {
+        return cantBoletas;
     }
 
-    public void setCaracteristicas(String caracteristicas) {
-        this.caracteristicas = caracteristicas;
-    }   
+    public void setCantBoletas(int cantBoletas) {
+        this.cantBoletas = cantBoletas;
+    }
+
+    public long getTotal() {
+        return total;
+    }
+
+    public void setTotal(long total) {
+        this.total = total;
+    }
+
+    public String getMedioPago() {
+        return medioPago;
+    }
+
+    public void setMedioPago(String medioPago) {
+        this.medioPago = medioPago;
+    }
 }

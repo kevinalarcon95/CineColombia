@@ -13,11 +13,16 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 public class panelInfoPeliculas extends javax.swing.JFrame {
     
+    private String nomPelicula;
+    private String ruta;
+    
     public panelInfoPeliculas() throws ParseException {
         initComponents();
     }
     
     public panelInfoPeliculas(String nombrePelicula, String ruta) throws SQLException, ParseException {
+        this.nomPelicula = nombrePelicula;
+        this.ruta = ruta;
         this.setUndecorated(true);
         initComponents();
         ((JTextField) this.DateFecha.getDateEditor()).setEditable(false); 
@@ -29,10 +34,12 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date dateF1 = formatter.parse(fechaPel);
         this.DateFecha.setSelectableDateRange(dateF1, dateF1);
+        
         horasFuncion(nombrePelicula);
         validarEfecto(nombrePelicula);
+        
     }
-    
+
     public void validarEfecto(String nomPelicula) throws SQLException{
         Funcion fun = new Funcion();
         DAOGestionFuncion daoFun = new DAOGestionFuncion();
@@ -79,7 +86,6 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
        areaSinopsis.setLineWrap(true);
        jScrollPane1.setBorder(null);
     }
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -121,7 +127,6 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         btnHoraFuncion2 = new javax.swing.JRadioButton();
         btnEfecto2D = new javax.swing.JRadioButton();
         btnConfirmar = new javax.swing.JButton();
-        lblPrueba = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -297,9 +302,6 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         });
         panelContenedorInfoPel.add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, -1, 20));
 
-        lblPrueba.setText("jLabel1");
-        panelContenedorInfoPel.add(lblPrueba, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, -1, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -328,6 +330,7 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Escoja un efecto de pelicula \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         } else if (btnHoraFuncion1.isSelected() && btnEfecto2D.isSelected()) {
             javax.swing.JOptionPane.showMessageDialog(this, "Entró \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            new panelCompraBoleta(nomPelicula,ruta).setVisible(true);
         }else if (btnHoraFuncion1.isSelected() && !btnEfecto3D.isSelected())
         {
             javax.swing.JOptionPane.showMessageDialog(this, "Escoja un efecto de pelicula \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -378,7 +381,6 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
     private javax.swing.JLabel lblIdioma;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblPaisOrigen;
-    private javax.swing.JLabel lblPrueba;
     private javax.swing.JLabel lblReparto;
     private javax.swing.JLabel lblSalir;
     private javax.swing.JLabel lblSelecDia;
