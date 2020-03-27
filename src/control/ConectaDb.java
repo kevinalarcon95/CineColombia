@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -162,6 +163,22 @@ public class ConectaDb {
         return valor;
     }
 //</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="" >
+   public ArrayList<String> generaColumnas(String cadenaSql) throws SQLException{
+       String resultado = "";
+       ArrayList<String> columnas = new ArrayList<>();
+       Statement st = conection.createStatement();
+        ResultSet rs = st.executeQuery(cadenaSql);
+
+        while (rs.next()) {
+            resultado = rs.getString(1);
+            columnas.add(resultado);
+        }
+        return columnas;
+       
+   }
+//</editor-fold>
 
 //  public static void main(String arsg[] ) throws SQLException{
 // ConectaDb cc = new ConectaDb();
@@ -170,8 +187,14 @@ public class ConectaDb {
 ////      System.out.println(cc.generaConsulta(sql));
 //
 //    //String sql = "select registro_nombre|| ' ' || registro_apellido from registroUsuario where registro_documento = 1061782493";
-//    String sql = "select tituloPelicula || ',' || fechaEstreno || ',' || clasificacionPelicula || ',' || sipnosispelicula || ',' || paisOrigenPelicula || ',' || duracionPelicula || ',' || repartoPelicula || ',' || directorPelicula || ',' || generoPelicula || ',' || idiomaPelicula from Peliculas where tituloPelicula = 'EL HOMBRE INVISIBLE'";  
-//    System.out.println(cc.generaCadena(sql));
+//    String sql = "select numSilla || ',' || estadosilla from sillas inner join compraBoleta on sillas.idSilla = compraboleta.idSilla where sala = 'S2';";
+//    ArrayList<String> columnas = new ArrayList<String>();
+//    
+//    columnas = cc.generaColumnas(sql);
+//      for (int i = 0; i < columnas.size(); i++) {
+//          System.out.println(columnas.get(i));
+//      }
+//    
 //      
 //  }
 }

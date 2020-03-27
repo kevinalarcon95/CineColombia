@@ -16,13 +16,14 @@ public class CompraBoleta {
     private String idioma;
     private String efecto;
     private int cantBoletas;
-    private long total;
+    private String total;
     private String medioPago;
+    private String silla;
 
     public CompraBoleta() {
     }
     
-    public CompraBoleta(String duracion, String clasificacion, String sala, String tituloPel, String fecha, String funcion, String idioma, String efecto, int cantBoletas, long total, String medioPago) {
+    public CompraBoleta(String duracion, String clasificacion, String sala, String tituloPel, String fecha, String funcion, String idioma, String efecto, int cantBoletas, String total, String medioPago, String silla) {
         this.duracion = duracion;
         this.clasificacion = clasificacion;
         this.sala = sala;
@@ -34,6 +35,7 @@ public class CompraBoleta {
         this.cantBoletas = cantBoletas;
         this.total = total;
         this.medioPago = medioPago;
+        this.silla = silla;
     }
 
     public String getDuracion() {
@@ -108,11 +110,11 @@ public class CompraBoleta {
         this.cantBoletas = cantBoletas;
     }
 
-    public long getTotal() {
+    public String getTotal() {
         return total;
     }
 
-    public void setTotal(long total) {
+    public void setTotal(String total) {
         this.total = total;
     }
 
@@ -122,5 +124,13 @@ public class CompraBoleta {
 
     public void setMedioPago(String medioPago) {
         this.medioPago = medioPago;
+    }
+
+    public String getSilla() {
+        return silla;
+    }
+
+    public void setSilla(String silla) {
+        this.silla = silla;
     }
 }

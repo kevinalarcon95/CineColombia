@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -15,14 +17,17 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
     
     private String nomPelicula;
     private String ruta;
+    private String clasificacion;
+    private String duracionPelicula;
+    private String sipnosis;
+    private String fechaPel;
     
     public panelInfoPeliculas() throws ParseException {
         initComponents();
     }
     
     public panelInfoPeliculas(String nombrePelicula, String ruta) throws SQLException, ParseException {
-        this.nomPelicula = nombrePelicula;
-        this.ruta = ruta;
+       
         this.setUndecorated(true);
         initComponents();
         ((JTextField) this.DateFecha.getDateEditor()).setEditable(false); 
@@ -37,6 +42,13 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         
         horasFuncion(nombrePelicula);
         validarEfecto(nombrePelicula);
+        
+        this.nomPelicula = nombrePelicula;
+        this.ruta = ruta;
+        this.clasificacion = contClasificacion.getText();
+        this.duracionPelicula = contDuracion.getText();
+        this.sipnosis = areaSinopsis.getText();
+        this.fechaPel = fechaPel;
         
     }
 
@@ -259,7 +271,6 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
         panelContenedorInfoPel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 320, 30));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblSelecDia.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -325,28 +336,101 @@ public class panelInfoPeliculas extends javax.swing.JFrame {
     }//GEN-LAST:event_lblSalirMouseClicked
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-
-        if (btnHoraFuncion1.isSelected() && !btnEfecto2D.isSelected()) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Escoja un efecto de pelicula \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        } else if (btnHoraFuncion1.isSelected() && btnEfecto2D.isSelected()) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Entró \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            new panelCompraBoleta(nomPelicula,ruta).setVisible(true);
-        }else if (btnHoraFuncion1.isSelected() && !btnEfecto3D.isSelected())
-        {
-            javax.swing.JOptionPane.showMessageDialog(this, "Escoja un efecto de pelicula \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        }else if(btnHoraFuncion1.isSelected() && btnEfecto3D.isSelected()){
-            javax.swing.JOptionPane.showMessageDialog(this, "Entró \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        //hasta aqui validaciones btnHoraFuncion1 el boton 1
-        }else if(btnHoraFuncion2.isSelected() && !btnEfecto2D.isSelected()) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Escoja un efecto de pelicula \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        } else if (btnHoraFuncion2.isSelected() && btnEfecto2D.isSelected()) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Entró \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        }else if (btnHoraFuncion2.isSelected() && !btnEfecto3D.isSelected())
-        {
-            javax.swing.JOptionPane.showMessageDialog(this, "Escoja un efecto de pelicula \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        }else if(btnHoraFuncion2.isSelected() && btnEfecto3D.isSelected()){
-            javax.swing.JOptionPane.showMessageDialog(this, "Entró \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        
+        if ((btnHoraFuncion1.isSelected() || btnHoraFuncion2.isSelected()) && (btnEfecto2D.isSelected() || btnEfecto3D.isSelected())) {
+            if (btnHoraFuncion1.isSelected() && btnEfecto2D.isSelected()) {
+                try {
+                    buttonGroup1.clearSelection();
+                    buttonGroup2.clearSelection();
+                    new panelCompraBoleta(nomPelicula, ruta, btnHoraFuncion1.getText(), btnEfecto2D.getText(), clasificacion, duracionPelicula, sipnosis, fechaPel).setVisible(true);
+                } catch (SQLException ex) {
+                    javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un problema con la aplicacion\n Comuniquese con el administrador", "AVISO!", javax.swing.JOptionPane.ERROR);
+                }
+            } else if (btnHoraFuncion1.isSelected() && btnEfecto3D.isSelected()) {
+                try {
+                    buttonGroup1.clearSelection();
+                    buttonGroup2.clearSelection();
+                    new panelCompraBoleta(nomPelicula, ruta, btnHoraFuncion1.getText(), btnEfecto3D.getText(), clasificacion, duracionPelicula, sipnosis, fechaPel).setVisible(true);
+                } catch (SQLException ex) {
+                    javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un problema con la aplicacion\n Comuniquese con el administrador", "AVISO!", javax.swing.JOptionPane.ERROR);
+                }
+            } else if (btnHoraFuncion2.isSelected() && btnEfecto2D.isSelected()) {
+                try {
+                    buttonGroup1.clearSelection();
+                    buttonGroup2.clearSelection();
+                    new panelCompraBoleta(nomPelicula, ruta, btnHoraFuncion2.getText(), btnEfecto2D.getText(), clasificacion, duracionPelicula, sipnosis, fechaPel).setVisible(true);
+                } catch (SQLException ex) {
+                    javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un problema con la aplicacion\n Comuniquese con el administrador", "AVISO!", javax.swing.JOptionPane.ERROR);
+                }
+            } else{
+                try {
+                    buttonGroup1.clearSelection();
+                    buttonGroup2.clearSelection();
+                    new panelCompraBoleta(nomPelicula, ruta, btnHoraFuncion2.getText(), btnEfecto3D.getText(), clasificacion, duracionPelicula, sipnosis, fechaPel).setVisible(true);
+                } catch (SQLException ex) {
+                    javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un problema con la aplicacion\n Comuniquese con el administrador", "AVISO!", javax.swing.JOptionPane.ERROR);
+                }
+            }
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Tiene que estar seleccionada una hora y un efecto \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         }
+
+        
+//        if (btnHoraFuncion1.isSelected() && !btnEfecto2D.isSelected()) {
+//            btnHoraFuncion1.setSelected(false);
+//            btnEfecto2D.setSelected(false);
+//            javax.swing.JOptionPane.showMessageDialog(this, "Escoja un efecto de pelicula \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+//        }
+//        else if (btnHoraFuncion1.isSelected() && btnEfecto2D.isSelected()) {
+//            javax.swing.JOptionPane.showMessageDialog(this, "Entró \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+//            try {
+//                btnHoraFuncion1.setSelected(false);
+//                btnEfecto2D.setSelected(false);
+//                new panelCompraBoleta(nomPelicula,ruta,btnHoraFuncion1.getText(),btnEfecto2D.getText(),clasificacion,duracionPelicula,sipnosis,fechaPel).setVisible(true);
+//            } catch (SQLException ex) {
+//                javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un problema con la aplicacion\n Comuniquese con el administrador", "AVISO!", javax.swing.JOptionPane.ERROR);
+//            }//bien
+//        }
+//        else if (btnHoraFuncion1.isSelected() && !btnEfecto3D.isSelected()){
+//            javax.swing.JOptionPane.showMessageDialog(this, "Escoja un efecto de pelicula \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+//            btnHoraFuncion1.setSelected(false);
+//            btnEfecto3D.setSelected(false);
+//        }
+//        else {
+//            javax.swing.JOptionPane.showMessageDialog(this, "Entró \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+//            try {
+//                btnHoraFuncion1.setSelected(false);
+//                btnEfecto3D.setSelected(false);
+//                new panelCompraBoleta(nomPelicula,ruta,btnHoraFuncion1.getText(),btnEfecto3D.getText(),clasificacion,duracionPelicula,sipnosis,fechaPel).setVisible(true);
+//                
+//            } catch (SQLException ex) {
+//                javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un problema con la aplicacion\n Comuniquese con el administrador", "AVISO!", javax.swing.JOptionPane.ERROR);
+//            }
+//        //hasta aqui validaciones btnHoraFuncion1 el boton 1
+//        }
+//        
+//        if(btnHoraFuncion2.isSelected() && !btnEfecto2D.isSelected()) {
+//            javax.swing.JOptionPane.showMessageDialog(this, "Escoja un efecto de pelicula \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+//        }
+//        else if (btnHoraFuncion2.isSelected() && btnEfecto2D.isSelected()) {
+//            javax.swing.JOptionPane.showMessageDialog(this, "Entró \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+//            try {
+//                new panelCompraBoleta(nomPelicula,ruta,btnHoraFuncion2.getText(),btnEfecto2D.getText(),clasificacion,duracionPelicula,sipnosis,fechaPel).setVisible(true);
+//            } catch (SQLException ex) {
+//                javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un problema con la aplicacion\n Comuniquese con el administrador", "AVISO!", javax.swing.JOptionPane.ERROR);
+//            }
+//        }
+//        if (btnHoraFuncion2.isSelected() && !btnEfecto3D.isSelected()){
+//            javax.swing.JOptionPane.showMessageDialog(this, "Escoja un efecto de pelicula \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+//        }
+//        else if(btnHoraFuncion2.isSelected() && btnEfecto3D.isSelected()){
+//            javax.swing.JOptionPane.showMessageDialog(this, "Entró \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+//            try {
+//                new panelCompraBoleta(nomPelicula,ruta,btnHoraFuncion2.getText(),btnEfecto3D.getText(),clasificacion,duracionPelicula,sipnosis,fechaPel).setVisible(true);
+//            } catch (SQLException ex) {
+//                javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un problema con la aplicacion\n Comuniquese con el administrador", "AVISO!", javax.swing.JOptionPane.ERROR);
+//            }
+//        }
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
